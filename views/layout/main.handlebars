@@ -1,0 +1,41 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Techy Blog</title>
+    <link
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/public/css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul class="navList">
+          <li><a href="/">Home</a></li>
+          {{#if logged_in}}
+            <li><a href="/dashboard">Dashboard</a></li>
+            <button class="no-button" id="logout">Logout</button>
+          {{else}}
+            <li><a href="/login">Login</a></li>
+          {{/if}}
+        </ul>
+        <div class="techLogo">
+          <h1>Techy Blogging</h1>
+        </div>
+      </nav>
+    </header>
+    
+    <main class="container container-fluid mt-5">
+      {{{body}}}
+    </main>
+
+    {{#if logged_in}}
+      <script src="/public/js/logout.js"></script>
+    {{/if}}
+  </body>
+</html>
